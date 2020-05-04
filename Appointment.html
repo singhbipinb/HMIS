@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Success</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style5.css">
+    <style>
+        article {
+            background-image: url("img/app.jpg");
+            margin-top: 0px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: fit-content;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav">
+            <ul>
+                <li><a href="Home.html ">Home</a></li>
+                <li><a href="List of Hospitals.html ">Hospitals</a></li>
+                <li><a href="# ">About</a></li>
+                <li><a href="FAQ.html ">Help</a></li>
+                <li><a href="UserLogin.html ">Login</a></li>
+                <li><a href="Signup.html">SignUp</a></li>
+            </ul>
+        </div>
+    </header>
+    <article>
+        <br>
+        <h4 id="rcorners">
+            <font face="times new roman" size="4px">Patients requests are awaiting to be approved!</font>
+        </h4>
+
+        <p id="rcorners1">
+            Appointed Department :<br> Appointed Doctor :<br> Appointed Hospital :<br> Appointed Date :<br></p>
+        <button class="button button1" onclick="openForm()">Approve</button>
+        <button class="button button2">Decline</button>
+        <p id="rcorners2">
+            Appointed Department :<br> Appointed Doctor :<br> Appointed Hospital :<br> Appointed Date :<br>
+        </p>
+        <button class="button button3" onclick="openForm()">Approve</button>
+        <button class="button button4">Decline</button>
+
+
+        <div class="form-popup" id="myForm">
+            <form action="/action_page.php" class="form-container">
+                <center><img src="IMG\green-tick.jpg" alt="Confirmation Tick" height="50" width="50"></img>
+                </center>
+                <h1>Appoinmtment Confirmed</h1>
+                <p>Message regarding the confirmation of appointment has been sent to the patient.</p>
+                <button type="button" class="btn" onclick="closeForm()">Done</button>
+            </form>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+
+    </article>
+    <footer>
+        <div class="imp-links ">
+            <div class="foot-col ">
+                <ul>
+                    <li><a href="Appointment.html">Appointments</a></li>
+                    <li><a href="List of Hospitals.html">Hospitals List</a></li>
+                    <li><a href=#>Health Tips</a></li>
+                </ul>
+            </div>
+            <div class="foot-col ">
+                <ul>
+                    <li><a href=#>Site Map</a></li>
+                    <li><a href=#>Contact</a></li>
+                    <li><a href="FAQ.html">Help</a></li>
+                </ul>
+            </div>
+            <div class="foot-col ">
+                <ul>
+                    <li><a href="FAQ.html">FAQs</a></li>
+                    <li><a href=#>Phone</a></li>
+                    <li><a href="mailto:info@mmumullana.org?subject=Mail Us">Email</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyrights ">
+            <p>Copyright© 2020 All Rights Reserved</p>
+        </div>
+        </br>
+    </footer>
+
+    <script>
+        function perform() {
+
+            window.open("appointment.html");
+
+        }
+
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

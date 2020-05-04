@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>FAQ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        article {
+            background-image: url("img/bg_8.jpg");
+            margin-top: 0px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 500px;
+        }
+        
+        .container {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            -moz-transform: translateX(-50%) translateY(-50%);
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+        }
+        
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+        }
+        
+        .active,
+        .accordion:hover {
+            background-color: #ccc;
+        }
+        
+        .accordion:after {
+            content: '\002B';
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+        
+        .active:after {
+            content: "\2212";
+        }
+        
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            width: 95%;
+            position: relative;
+            transition: max-height 0.2s ease-in-out;
+            border-radius: 15px;
+        }
+        
+        .panel.show {
+            opacity: 1;
+            max-height: 500px;
+            /* Whatever you like, as long as its more than the height of the content (on all screen sizes) */
+        }
+        
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+        body {
+            background: #f2f2f2;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        .search {
+            width: 100%;
+            position: relative;
+            display: flex;
+        }
+        
+        .searchTerm {
+            width: 100%;
+            border: 3px solid #003181;
+            border-right: none;
+            padding: 5px;
+            height: 30px;
+            border-radius: 15px 15px 15px 15px;
+            outline: none;
+            color: #9DBFAF;
+        }
+        
+        .searchTerm:focus {
+            color: #00B4CC;
+        }
+        
+        .searchButton {
+            width: 40px;
+            height: 36px;
+            border: 1px solid #003181;
+            background: #003181;
+            text-align: center;
+            color: #fff;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        /*Resize the wrap to see the search bar change!*/
+        
+        .wrap {
+            width: 80%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="List of Hospitals.html ">Hospitals</a></li>
+                <li><a href="# ">About</a></li>
+                <li><a class="active" href="FAQ.html ">Help</a></li>
+                <li><a href="UserLogin.html ">Login</a></li>
+                <li><a href="Signup.html">SignUp</a></li>
+            </ul>
+        </div>
+    </header>
+    <article id="content">
+        <br></br>
+        </br>
+        <div class="container">
+            </br>
+            </br>
+            </br>
+            <h2>
+                <center>How can we help you?</center>
+            </h2>
+            </br>
+            <div class="wrap">
+                <div class="search">
+                    <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                    <button type="submit" class="searchButton">
+        <i class="fa fa-search" aria-hidden="true"></i>
+     </button>
+                </div>
+            </div>
+            </br>
+            <p>
+                <center><b>You can also browse the topics given below to find what you are looking for</b></center>
+            </p>
+            <button class="accordion">How secure is the patient data?</button>
+            <div class="panel">
+                <p>All data is encrypted and the system is password protected.</p>
+            </div>
+
+            <button class="accordion">Is there any support facility available?</button>
+            <div class="panel">
+                <p>We have a dedicated team of support executives who can be reached through telephone, remote connection, Skype or online chat. All the complaints raised within us are reviewed and escalated to the support team who will work for you to solve
+                    the issue at the earliest.</p>
+            </div>
+
+            <button class="accordion">How do I check the software before making any purchase?</button>
+            <div class="panel">
+                <p>Sure. We want all of our customers to check the software before they are making the purchase decision. – Ask for a free demo. Our Sales team will walk you through the software. – We will then give you a test trial account for usage for
+                    7 days. – Then you make the decision.</p>
+            </div>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function(event) {
+
+
+                    var acc = document.getElementsByClassName("accordion");
+                    var panel = document.getElementsByClassName('panel');
+
+                    for (var i = 0; i < acc.length; i++) {
+                        acc[i].onclick = function() {
+                            var setClasses = !this.classList.contains('active');
+                            setClass(acc, 'active', 'remove');
+                            setClass(panel, 'show', 'remove');
+
+                            if (setClasses) {
+                                this.classList.toggle("active");
+                                this.nextElementSibling.classList.toggle("show");
+                            }
+                        }
+                    }
+
+                    function setClass(els, className, fnName) {
+                        for (var i = 0; i < els.length; i++) {
+                            els[i].classList[fnName](className);
+                        }
+                    }
+
+                });
+            </script>
+            <p>
+                <center><i><b>If you don't see your question here, drop us a line on our <a href="# ">contact us</a> page.</i></b>
+                </center>
+            </p>
+            </br>
+        </div>
+        <br>
+    </article>
+    <footer>
+        <div class="imp-links ">
+            <div class="foot-col ">
+                <ul>
+                    <li><a href="Appointment.html">Appointments</a></li>
+                    <li><a href="List of Hospitals.html">Hospitals List</a></li>
+                    <li><a href=#>Health Tips</a></li>
+                </ul>
+            </div>
+            <div class="foot-col ">
+                <ul>
+                    <li><a href=#>Site Map</a></li>
+                    <li><a href=#>Contact</a></li>
+                    <li><a href="FAQ.html">Help</a></li>
+                </ul>
+            </div>
+            <div class="foot-col ">
+                <ul>
+                    <li><a href="FAQ.html">FAQs</a></li>
+                    <li><a href=#>Phone</a></li>
+                    <li><a href="mailto:info@mmumullana.org?subject=Mail Us">Email</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyrights ">
+            <p>Copyright© 2020 All Rights Reserved</p>
+        </div>
+        </br>
+    </footer>
+</body>
+
+</html>

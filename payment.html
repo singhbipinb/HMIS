@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Make Your Payment</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pay.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="nav">
+            <ul>
+                <li><a href="Home.html ">Home</a></li>
+                <li><a href="List of Hospitals.html ">Hospitals</a></li>
+                <li><a href="# ">About</a></li>
+                <li><a href="FAQ.html ">Help</a></li>
+                <li><a href="UserLogin.html ">Login</a></li>
+                <li><a href="Signup.html">SignUp</a></li>
+                <li><a href="Profile.html ">Profile</a></li>
+                <li><a href="# ">Log Out</a></li>
+            </ul>
+        </div>
+    </header>
+    <article id="content ">
+        <br>
+
+        <h1 style="text-align: center; font-size: 300%"> Make your Payment </h1>
+        <br>
+
+
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'Cards')" id="defaultOpen">Credit/Debit Card</button>
+            <button class="tablinks" onclick="openTab(event, 'PayPal'); palpay()">PayPal</button>
+            <button class="tablinks" onclick="openTab(event, 'bank')">Bank Transfer</button>
+        </div>
+
+        <div id="Cards" class="tabcontent">
+            <h3 style="text-align: center">Enter your Card Details</h3>
+            <form>
+                <label>Name on the card</label><br>
+                <input type="text"><br><br>
+                <label>Card Number</label><br>
+                <span><input type="text"  data-inputmask="'mask': '9999 9999 9999 9999'" >&nbsp; <img src="img/visa.png"> <img src="img/mcard.png"> <img src="img/rupay.png"><br><br>
+	  </span>
+
+
+                <label>Expiration</label> <label style="float: right;margin-right: 40%">CVV</label> <br>
+                <input type="number" min="01" max="12" onKeyPress="if(this.value.length==2) return false;" style="width: 10%;text-align: center"> <label style="font-size: 40px"> /</label>
+                <input type="number" min="2020" max="2040" onKeyPress="if(this.value.length==4) return false;" style="width: 18%;text-align: center"> &nbsp;&nbsp;
+
+
+                <input type="text" data-inputmask="'mask': '999'" style="width: 15%;text-align: center;float: right;margin-right: 30%"> <br> <br>
+
+
+                <center> <button value="Confirm" class="button1" style="text-align: center">Confirm</button> </center><br><br>
+            </form>
+        </div>
+
+        <div id="PayPal" class="tabcontent">
+            <br><br>
+            <center>
+                <div class="loader"></div><br><br> Please wait while Paypal confirms the payment</center><br><br>
+
+        </div>
+
+        <div id="bank" class="tabcontent">
+            <h3 style="align-items: center; align-self: center; text-align: center;">Pay through Bank Transfer:</h3>
+
+            <div id="bpay">
+                <p id="bp">Please pay the amount in the following account: <br><br>
+                    <b>Account Number: 647383929xxxx<br>
+	IFSC Code: SBIN0011843</b><br><br> After Successful payment enter your transaction details<br><br></p>
+            </div>
+
+            <form>
+                Your Account Number: <br>
+                <input type="number"><br><br> Transaction Number/ID:<br>
+                <input type="text"><br><br>
+
+                <center><button value="Submit" class="button1">Submit</button></center>
+
+
+            </form>
+            <br><br>
+
+        </div>
+
+        <script src="script/jquery.min.js">
+        </script>
+
+        <script src="script/jquery.inputmask.bundle.js">
+        </script>
+
+        <script src="script/pay.js">
+        </script>
+
+
+
+
+
+
+        <br>
+        <br>
+        <br>
+
+        <br>
+    </article>
+    <footer>
+        <div class="imp-links ">
+            <div class="foot-col ">
+                <ul>
+                    <li><a href="Appointment.html">Appointments</a></li>
+                    <li><a href="List of Hospitals.html">Hospitals List</a></li>
+                    <li><a href=#>Health Tips</a></li>
+                </ul>
+            </div>
+            <div class="foot-col ">
+                <ul>
+                    <li><a href=#>Site Map</a></li>
+                    <li><a href=#>Contact</a></li>
+                    <li><a href="FAQ.html">Help</a></li>
+                </ul>
+            </div>
+            <div class="foot-col ">
+                <ul>
+                    <li><a href="FAQ.html">FAQs</a></li>
+                    <li><a href=#>Phone</a></li>
+                    <li><a href="mailto:info@mmumullana.org?subject=Mail Us">Email</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyrights ">
+            <p>Copyright© 2020 All Rights Reserved</p>
+        </div>
+        </br>
+    </footer>
+</body>
+
+</html>
